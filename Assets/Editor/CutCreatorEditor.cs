@@ -9,18 +9,15 @@ namespace SwiperEngine
 {
     public class CutCreatorEditor : EditorWindow
     {
-        [MenuItem("CreateCut",menuItem = "CutEditor/CreateCut")]
-        public static void CreateCutObject()
+        public static CutObject GetCutFromStringArray(string[] dialogues)
         {
-            string path = Application.dataPath + "/data/dialogue.txt";
-            string[] dialogues = File.ReadAllLines(path);
             string[] separators = new string[] { "[s]" };
             CutObject cutObject = new CutObject();
             cutObject.strips = new List<Strip>();
             for (int i = 0; i < dialogues.Length; i++)
             {
                 Strip strip;
-                string[] split = dialogues[i].Split(separators,StringSplitOptions.None);
+                string[] split = dialogues[i].Split(separators, StringSplitOptions.None);
                 strip.skit = split[0];
                 strip.text = split[1];
                 strip.emotion = "-";
@@ -33,10 +30,12 @@ namespace SwiperEngine
                     if (split[j].Contains("#"))
                     {
                         strip.emotion = split[j].Split(new char[] { '#' })[1];
-                    } else if (split[j].Contains("$"))
+                    }
+                    else if (split[j].Contains("$"))
                     {
                         strip.direction = split[j].Split(new char[] { '$' })[1];
-                    }else if (split[j].Contains("/"))
+                    }
+                    else if (split[j].Contains("/"))
                     {
                         strip.background = split[j].Split(new char[] { '/' })[1];
                     }
@@ -47,7 +46,15 @@ namespace SwiperEngine
                 }
                 cutObject.strips.Add(strip);
             }
+            return cutObject;
+        }
 
+        [MenuItem("CreateCut",menuItem = "CutEditor/CreateCut")]
+        public static void CreateCutObject()
+        {
+            string path = Application.dataPath + "/data/dialogue.txt";
+            string[] dialogues = File.ReadAllLines(path);
+            CutObject cutObject = GetCutFromStringArray(dialogues);
             AssetDatabase.CreateAsset(cutObject, "Assets/cut.asset");
         }
 
