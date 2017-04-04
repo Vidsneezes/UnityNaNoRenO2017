@@ -1,0 +1,218 @@
+{
+    "Me": {
+        "name": "Me",
+        "emotions": {
+            "undefined": {
+                "sprite": "undefined.svg",
+                "pos": "16vh",
+                "motion": "gentle",
+                "color": "#f43404"
+            },
+            "exhausted": {
+                "sprite": "exhausted.svg",
+                "color": "#aa9aed",
+                "pos": "16vh",
+                "motion": "wooble"
+            },
+            "happier": {
+                "sprite": "happier.svg",
+                "color": "#f7dc45",
+                "pos": "16vh",
+                "motion": "mad"
+            },
+            "happy": {
+                "sprite": "happy.svg",
+                "color": "#f7f574",
+                "pos": "16vh",
+                "motion": "mad"
+            },
+            "neutral": {
+                "sprite": "neutral.svg",
+                "color": "#d2e8b0",
+                "pos": "16vh",
+                "motion": "mad"
+            },
+            "sad": {
+                "sprite": "sad.svg",
+                "color": "#47c2e8",
+                "pos": "16vh",
+                "motion": "gentle"
+            },
+            "tire": {
+                "sprite": "tire.svg",
+                "color": "#80d7f2",
+                "pos": "16vh",
+                "motion": "gentle"
+            },
+            "uncomfortable": {
+                "sprite": "uncomfortable.svg",
+                "color": "#c99ffc",
+                "pos": "16vh",
+                "motion": "gentle"
+            },
+            "wacky": {
+                "sprite": "wacky.svg",
+                "color": "#d6fc9f",
+                "pos": "16vh",
+                "motion": "gentle"
+            },
+            "worry": {
+                "sprite": "worry.svg",
+                "color": "#d10a5d",
+                "pos": "16vh",
+                "motion": "gentle"
+            }
+        }
+    },
+    "Alia": {
+        "name": "Alia",
+        "emotions": {
+            "happy": {
+                "sprite": "happy.svg",
+                "pos": "1vh",
+                "color": "#f9ff54",
+                "motion": "gentle"
+            },
+            "mad": {
+                "sprite": "mad.svg",
+                "color": "#f78f8f",
+                "pos": "1vh",
+                "motion": "wooble"
+            },
+            "madder": {
+                "sprite": "madder.svg",
+                "color": "#ed5c5c",
+                "pos": "1vh",
+                "motion": "mad"
+            },
+            "maddest": {
+                "sprite": "maddest.svg",
+                "color": "#f90202",
+                "pos": "1vh",
+                "motion": "mad"
+            },
+            "tire": {
+                "sprite": "tire.svg",
+                "color": "#bcffc1",
+                "pos": "1vh",
+                "motion": "mad"
+            },
+            "wacky": {
+                "sprite": "wacky.svg",
+                "color": "#ed71b9",
+                "pos": "1vh",
+                "motion": "gentle"
+            },
+            "worry": {
+                "sprite": "worry.svg",
+                "color": "#d055fc",
+                "pos": "1vh",
+                "motion": "gentle"
+            }
+        }
+    },
+    "Katy": {
+        "name": "Katy",
+        "emotions": {
+            "undefined": {
+                "sprite": "undefined.svg",
+                "pos": "22vh",
+                "color": "#b71096",
+                "motion": "gentle"
+            },
+            "mad": {
+                "sprite": "mad.svg",
+                "pos": "22vh",
+                "color": "#f990a4",
+                "motion": "wooble"
+            },
+            "madder": {
+                "sprite": "madder.svg",
+                "color": "#f44b6c",
+                "pos": "22vh",
+                "motion": "mad"
+            },
+            "maddest": {
+                "sprite": "maddest.svg",
+                "color": "#f4002f",
+                "pos": "22vh",
+                "motion": "mad"
+            },
+            "neutral": {
+                "sprite": "neutral.svg",
+                "color": "#fc3adc",
+                "pos": "22vh",
+                "motion": "mad"
+            },
+            "tire": {
+                "sprite": "tire.svg",
+                "color": "#b7f0ff",
+                "pos": "22vh",
+                "motion": "gentle"
+            }
+        }
+    },
+    "May": {
+        "name": "May",
+        "emotions": {
+            "happy": {
+                "sprite": "happy.svg",
+                "pos": "5vh",
+                "color": "#f9ff54",
+                "motion": "gentle"
+            },
+            "neutral": {
+                "sprite": "neutral.svg",
+                "color": "#acf7a0",
+                "pos": "5vh",
+                "motion": "wooble"
+            },
+            "worry": {
+                "sprite": "worry.svg",
+                "color": "#9355b2",
+                "pos": "5vh",
+                "motion": "mad"
+            }
+        }
+    },
+    "Policeman": {
+        "name": "Policeman",
+        "emotions": {
+            "undefined": {
+                "sprite": "undefined.svg",
+                "pos": "14vh",
+                "motion": "gentle",
+                "color": "#f4007b"
+            },
+            "mad": {
+                "sprite": "mad.svg",
+                "color": "#d81175",
+                "pos": "14vh",
+                "motion": "wooble"
+            },
+            "neutral": {
+                "sprite": "neutral.svg",
+                "color": "#f28abe",
+                "pos": "14vh",
+                "motion": "mad"
+            },
+            "tire": {
+                "sprite": "tire.svg",
+                "color": "#a04d76",
+                "pos": "14vh",
+                "motion": "mad"
+            }
+        }
+    },
+    "Jokel": {
+        "name": "Jokel",
+        "emotions": {
+            "happy": {
+                "sprite": "happy.svg",
+                "pos": "-2vh",
+                "color": "#f9ff54",
+                "motion": "gentle"
+            }
+        }
+    }
+}
