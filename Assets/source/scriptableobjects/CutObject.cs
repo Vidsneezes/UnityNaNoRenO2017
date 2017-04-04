@@ -2,15 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CutObject : MonoBehaviour {
+namespace SwiperEngine
+{
+    public class CutObject : ScriptableObject
+    {
+        public List<Strip> strips;
+    }
+}
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+public struct Strip
+{
+    public enum Direction
+    {
+        right,
+        left
+    }
+
+    public string skit;
+    public string emotion;
+    public string text;
+    public Direction left;
+    public string background;
+    public string music;
 }
