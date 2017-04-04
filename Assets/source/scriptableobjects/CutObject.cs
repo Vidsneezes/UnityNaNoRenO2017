@@ -10,6 +10,7 @@ namespace SwiperEngine
     }
 }
 
+[System.Serializable]
 public struct Strip
 {
     public enum Direction
