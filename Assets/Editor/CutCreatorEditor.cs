@@ -45,10 +45,10 @@ namespace SwiperEngine
                         strip.background = split[j].Split(new char[] { '!' })[1];
                     }
                 }
+                cutObject.strips.Add(strip);
             }
 
-            CutObject mm = new CutObject();
-            //AssetDatabase.CreateAsset(mm, "Assets/cut.asset");
+            AssetDatabase.CreateAsset(cutObject, "Assets/cut.asset");
         }
 
     }
