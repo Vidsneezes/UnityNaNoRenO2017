@@ -1,2 +1,2 @@
-﻿Me:I want some coffee#neutral$right/nightsky!TheStart
-Me:ugghh, I don't want to get up though#angry
+﻿Me[s]I want some coffee[s]#neutral[s]$right[s]/nightsky[s]!TheStart
+Me[s]ugghh, I don't want to get up though[s]#angry

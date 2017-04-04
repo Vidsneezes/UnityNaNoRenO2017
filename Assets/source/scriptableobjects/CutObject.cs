@@ -13,16 +13,10 @@ namespace SwiperEngine
 [System.Serializable]
 public struct Strip
 {
-    public enum Direction
-    {
-        right,
-        left
-    }
-
     public string skit;
     public string emotion;
     public string text;
-    public Direction left;
+    public string direction;
     public string background;
     public string music;
 }
