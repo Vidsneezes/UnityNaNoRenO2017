@@ -10,6 +10,8 @@ namespace SwiperEngine
     {
         public CoreLogic coreLogic;
 
+        public DialoguePanel dialoguePanel;
+
         public DialoguePanel leftPanelPrefab;
         public DialoguePanel rightPanelPrefab;
         public Transform inactivePanelsHolder;
@@ -61,31 +63,14 @@ namespace SwiperEngine
 
         public void SpawnPanel()
         {
-            DialoguePanel dp;
+            DialoguePanel dp = GameObject.Instantiate(dialoguePanel);
             Strip strip = coreLogic.NextStrip();
-            if(strip.direction == "right")
+            if(strip.direction != "-")
             {
-                stripMeta.lastRealDirection = "right";
-                dp = GameObject.Instantiate(rightPanelPrefab);
-            }
-            else if(strip.direction == "left")
-            {
-                stripMeta.lastRealDirection = "left";
-                dp = GameObject.Instantiate(leftPanelPrefab);
+                dp.AlignImage(strip.direction);
             }else
             {
-                if (stripMeta.lastRealDirection == "right")
-                {
-                    dp = GameObject.Instantiate(rightPanelPrefab);
-                }
-                else if (stripMeta.lastRealDirection == "left")
-                {
-                    dp = GameObject.Instantiate(leftPanelPrefab);
-                }
-                else
-                {
-                    dp = GameObject.Instantiate(leftPanelPrefab);
-                }
+                dp.AlignImage(stripMeta.lastRealDirection);  
             }
             dp.coreManager = this;
             dp.transform.SetParent(activePanelsHolder);
