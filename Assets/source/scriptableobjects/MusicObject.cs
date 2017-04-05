@@ -2,15 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicObject : MonoBehaviour {
+namespace SwiperEngine
+{
+    [CreateAssetMenu(fileName = "Musical Profile", menuName = "SwiperEngine/MusicalProfile", order = 2)]
+    public class MusicObject : ScriptableObject
+    {
+        public List<MusicStruct> musicList;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        [ContextMenu("Re Assign Names")]
+        public void AssignNames()
+        {
+            for (int i = 0; i < musicList.Count; i++)
+            {
+                musicList[i] = new BackgroundStruct(musicList[i].audioClip.name, musicList[i].audioClip);
+            }
+        }
+    }
+
+    [System.Serializable]
+    public struct MusicStruct
+    {
+        public string name;
+        public AudioClip audioClip;
+
+        public MusicStruct(string _name, AudioClip _auCl)
+        {
+            name = _name;
+            audioClip = _auCl;
+        }
+    }
 }
