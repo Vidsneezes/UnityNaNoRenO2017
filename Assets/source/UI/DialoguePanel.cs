@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 namespace SwiperEngine
 {
@@ -20,6 +21,11 @@ namespace SwiperEngine
         public void ChangeEmotionSpriteColor(Color color)
         {
             emotionPanel.color = color;
+        }
+
+        public void MoveLocally(Vector3 newPosition, float duration = 0.3f)
+        {
+            transform.DOLocalMove(newPosition, duration).SetEase(Ease.OutBack);
         }
     }
 }

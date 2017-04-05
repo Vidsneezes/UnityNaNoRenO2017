@@ -19,8 +19,12 @@ namespace SwiperEngine
         public float panelPadding;
         public Image backgroundImage;
 
+        public string state;
+
         private List<DialoguePanel> activePanels;
         private List<DialoguePanel> inactivePanels;
+
+        private List<DialoguePanel> tweeningPanels;
 
         private void Start()
         {
@@ -35,6 +39,10 @@ namespace SwiperEngine
             {
                 SpawnPanel();
             }
+
+            switch (state)
+            {
+            }
         }
 
         public void SpawnPanel()
@@ -44,7 +52,7 @@ namespace SwiperEngine
             dp.transform.localScale = new Vector3(1, 1, 1);
             dp.transform.localPosition = new Vector3(0, -300, 0);
             Vector3 placePosition = new Vector3(0, panelPadding);
-            dp.transform.DOLocalMove(placePosition, 0.3f).SetEase(Ease.OutBack);
+            dp.MoveLocally(placePosition);
             ShiftOtherPanelsUp();
             activePanels.Add(dp);
         }
@@ -61,7 +69,7 @@ namespace SwiperEngine
         {
             Vector3 newPos = dp.transform.localPosition;
             newPos.y += panelHeight;
-            dp.transform.DOLocalMove(newPos, 0.3f).SetEase(Ease.OutCirc);
+            dp.MoveLocally(newPos);
         }
 
     }
