@@ -37,6 +37,7 @@ namespace SwiperEngine
         public string state;
 
         public List<CharacterProfileMeta> characters;
+        public BackgroundObject backgrounds;
 
         private List<DialoguePanel> activePanels;
         private List<DialoguePanel> inactivePanels;
@@ -170,6 +171,18 @@ namespace SwiperEngine
                 }
             }
         }
+
+        public void SetBackground(string backgroundName)
+        {
+            for (int i = 0; i < backgrounds.backgrounds.Count; i++)
+            {
+                if(backgrounds.backgrounds[i].name == backgroundName)
+                {
+                    backgroundImage.sprite = backgrounds.backgrounds[i].Image;
+                    stripMeta.background = backgrounds.backgrounds[i].Image;
+                }
+            }
+        }
     }
 
     public struct StripMeta
@@ -179,6 +192,7 @@ namespace SwiperEngine
         public string skit;
         public Sprite sprite;
         public Color color;
+        public Sprite background;
     }
 
     [System.Serializable]
