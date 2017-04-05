@@ -42,6 +42,9 @@ namespace SwiperEngine
 
             switch (state)
             {
+                case "INITIAL":break;
+                case "WAIT_SPAWN_TWEEN":break;
+                case "WAIT_INPUT":break;
             }
         }
 
@@ -53,6 +56,7 @@ namespace SwiperEngine
             dp.transform.localPosition = new Vector3(0, -300, 0);
             Vector3 placePosition = new Vector3(0, panelPadding);
             dp.MoveLocally(placePosition);
+            tweeningPanels.Add(dp);
             ShiftOtherPanelsUp();
             activePanels.Add(dp);
         }
@@ -70,6 +74,7 @@ namespace SwiperEngine
             Vector3 newPos = dp.transform.localPosition;
             newPos.y += panelHeight;
             dp.MoveLocally(newPos);
+            tweeningPanels.Add(dp);
         }
 
     }
