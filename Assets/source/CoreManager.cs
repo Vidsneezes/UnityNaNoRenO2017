@@ -9,13 +9,17 @@ namespace SwiperEngine
 {
     public class CoreManager : MonoBehaviour
     {
-            //TODO background parser
-
-            //TODO music Parser
-
-            //TODO music player
-
             //TODO finish state reducer
+
+            //TODO try to add voice acting--- later
+
+            //TODO finish dialogue conversion
+
+            //TODO add connect to scene changes
+
+            //TODO add a options window for volume settings
+
+            //TODO -g add scene management and game manager
 
         public CoreLogic coreLogic;
 
