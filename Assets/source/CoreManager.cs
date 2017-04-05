@@ -33,6 +33,7 @@ namespace SwiperEngine
         public float panelHeight;
         public float panelPadding;
         public Image backgroundImage;
+        public AudioManager audioManager;
 
         public string state;
 
@@ -198,6 +199,7 @@ namespace SwiperEngine
         public Sprite sprite;
         public Color color;
         public Sprite background;
+        public AudioClip music;
     }
 
     [System.Serializable]
