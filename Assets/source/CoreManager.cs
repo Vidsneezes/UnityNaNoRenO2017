@@ -29,13 +29,21 @@ namespace SwiperEngine
             SpawnPanel();
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                SpawnPanel();
+            }
+        }
+
         public void SpawnPanel()
         {
             DialoguePanel dp = GameObject.Instantiate(leftPanelPrefab);
             dp.transform.SetParent(activePanelsHolder);
             dp.transform.localScale = new Vector3(1, 1, 1);
             dp.transform.localPosition = new Vector3(0, -300, 0);
-            Vector3 placePosition = new Vector3(0, activePanels.Count * panelHeight + panelPadding);
+            Vector3 placePosition = new Vector3(0, panelPadding);
             dp.transform.DOLocalMove(placePosition, 0.3f).SetEase(Ease.OutBack);
             ShiftOtherPanelsUp();
             activePanels.Add(dp);
