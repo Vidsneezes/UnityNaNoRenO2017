@@ -24,11 +24,24 @@ namespace SwiperEngine
         {
             activePanels = new List<DialoguePanel>();
             inactivePanels = new List<DialoguePanel>();
+            SpawnPanel();
+            SpawnPanel();
+            SpawnPanel();
+            SpawnPanel();
+            SpawnPanel();
+            SpawnPanel();
+            SpawnPanel();
+            SpawnPanel();
+
         }
 
         public void SpawnPanel()
         {
-
+            DialoguePanel dp = GameObject.Instantiate(leftPanelPrefab);
+            dp.transform.SetParent(activePanelsHolder);
+            dp.transform.localPosition = new Vector3(dp.transform.localPosition.x,activePanels.Count * panelHeight + panelPadding );
+            dp.transform.localScale = new Vector3(1, 1, 1);
+            activePanels.Add(dp);
         }
 
     }
