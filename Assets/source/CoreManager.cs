@@ -9,18 +9,11 @@ namespace SwiperEngine
 {
     public class CoreManager : MonoBehaviour
     {
-
-        //TODO add image parser
-        
-            //TODO Emotion parser
-
             //TODO background parser
 
             //TODO music Parser
 
             //TODO music player
-
-            //TODO implement Text reader letter by letter
 
             //TODO finish state reducer
 
