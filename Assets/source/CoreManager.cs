@@ -23,7 +23,7 @@ namespace SwiperEngine
 
         private List<DialoguePanel> activePanels;
         private List<DialoguePanel> inactivePanels;
-
+        private StripMeta stripMeta;
         private List<DialoguePanel> tweeningPanels;
 
         private void Start()
@@ -61,7 +61,32 @@ namespace SwiperEngine
 
         public void SpawnPanel()
         {
-            DialoguePanel dp =  GameObject.Instantiate(leftPanelPrefab);
+            DialoguePanel dp;
+            Strip strip = coreLogic.NextStrip();
+            if(strip.direction == "right")
+            {
+                stripMeta.lastRealDirection = "right";
+                dp = GameObject.Instantiate(rightPanelPrefab);
+            }
+            else if(strip.direction == "left")
+            {
+                stripMeta.lastRealDirection = "left";
+                dp = GameObject.Instantiate(leftPanelPrefab);
+            }else
+            {
+                if (stripMeta.lastRealDirection == "right")
+                {
+                    dp = GameObject.Instantiate(rightPanelPrefab);
+                }
+                else if (stripMeta.lastRealDirection == "left")
+                {
+                    dp = GameObject.Instantiate(leftPanelPrefab);
+                }
+                else
+                {
+                    dp = GameObject.Instantiate(leftPanelPrefab);
+                }
+            }
             dp.coreManager = this;
             dp.transform.SetParent(activePanelsHolder);
             dp.transform.localScale = new Vector3(1, 1, 1);
@@ -95,4 +120,9 @@ namespace SwiperEngine
             tweeningPanels.Remove(dp);
         }
     }
+}
+
+public struct StripMeta
+{
+    public string lastRealDirection;
 }
