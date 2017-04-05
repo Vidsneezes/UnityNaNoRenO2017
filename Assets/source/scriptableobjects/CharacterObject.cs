@@ -16,6 +16,7 @@ namespace SwiperEngine
         public string name;
         public Sprite sprite;
         public Vector2 offset;
+        public Vector2 size;
         public Color color;
     }
 }
