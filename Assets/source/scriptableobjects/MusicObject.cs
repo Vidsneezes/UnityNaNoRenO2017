@@ -14,7 +14,7 @@ namespace SwiperEngine
         {
             for (int i = 0; i < musicList.Count; i++)
             {
-                musicList[i] = new BackgroundStruct(musicList[i].audioClip.name, musicList[i].audioClip);
+                musicList[i] = new MusicStruct(musicList[i].audioClip.name, musicList[i].audioClip);
             }
         }
     }
