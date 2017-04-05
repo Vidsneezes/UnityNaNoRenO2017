@@ -39,6 +39,7 @@ namespace SwiperEngine
 
         public List<CharacterProfileMeta> characters;
         public BackgroundObject backgrounds;
+        public MusicObject musicObject;
 
         private List<DialoguePanel> activePanels;
         private List<DialoguePanel> inactivePanels;
@@ -98,6 +99,11 @@ namespace SwiperEngine
             if(strip.background != "-")
             {
                 SetBackground(strip.background);
+            }
+
+            if(strip.music != "-")
+            {
+                SetMusic(strip.music);
             }
 
             stripMeta.skit = strip.skit;
@@ -186,6 +192,18 @@ namespace SwiperEngine
                 {
                     backgroundImage.sprite = backgrounds.backgrounds[i].Image;
                     stripMeta.background = backgrounds.backgrounds[i].Image;
+                }
+            }
+        }
+
+        public void SetMusic(string musicName)
+        {
+            for (int i = 0; i < musicObject.musicList.Count; i++)
+            {
+                if (musicObject.musicList[i].name == musicName)
+                {
+                    audioManager.PlayClip(musicObject.musicList[i].audioClip);
+                    stripMeta.music = musicObject.musicList[i].audioClip;
                 }
             }
         }
