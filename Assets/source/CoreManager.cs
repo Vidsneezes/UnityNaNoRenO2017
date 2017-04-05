@@ -36,7 +36,8 @@ namespace SwiperEngine
             dp.transform.localScale = new Vector3(1, 1, 1);
             dp.transform.localPosition = new Vector3(0, -300, 0);
             Vector3 placePosition = new Vector3(0, activePanels.Count * panelHeight + panelPadding);
-            dp.transform.DOLocalMove(placePosition, 0.3f).SetEase(Ease.InBounce);
+            dp.transform.DOLocalMove(placePosition, 0.3f).SetEase(Ease.OutBack);
+            ShiftOtherPanelsUp();
             activePanels.Add(dp);
         }
 
@@ -44,13 +45,15 @@ namespace SwiperEngine
         {
             for (int i = 0; i < activePanels.Count; i++)
             {
-
+                ShiftPanel(activePanels[i]);
             }
         }
      
-        private void ShiftPanel()
+        private void ShiftPanel(DialoguePanel dp)
         {
-
+            Vector3 newPos = dp.transform.localPosition;
+            newPos.y += panelHeight;
+            dp.transform.DOLocalMove(newPos, 0.3f).SetEase(Ease.OutCirc);
         }
 
     }
