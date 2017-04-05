@@ -12,7 +12,8 @@ namespace SwiperEngine
         public static CutObject GetCutFromStringArray(string[] dialogues)
         {
             string[] separators = new string[] { "[s]" };
-            CutObject cutObject = new CutObject();
+
+            CutObject cutObject = (CutObject)ScriptableObject.CreateInstance(typeof(CutObject));
             cutObject.strips = new List<Strip>();
             for (int i = 0; i < dialogues.Length; i++)
             {
@@ -41,7 +42,7 @@ namespace SwiperEngine
                     }
                     else if (split[j].Contains("!"))
                     {
-                        strip.background = split[j].Split(new char[] { '!' })[1];
+                        strip.music = split[j].Split(new char[] { '!' })[1];
                     }
                 }
                 cutObject.strips.Add(strip);
@@ -52,7 +53,7 @@ namespace SwiperEngine
         [MenuItem("CreateCut",menuItem = "CutEditor/CreateCut")]
         public static void CreateCutObject()
         {
-            string path = Application.dataPath + "/data/dialogue.txt";
+            string path = Application.dataPath + "/GameData/dialogue.txt";
             string[] dialogues = File.ReadAllLines(path);
             CutObject cutObject = GetCutFromStringArray(dialogues);
             AssetDatabase.CreateAsset(cutObject, "Assets/cut.asset");
