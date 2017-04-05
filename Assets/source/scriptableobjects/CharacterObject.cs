@@ -21,6 +21,20 @@ namespace SwiperEngine
 
             return emotions[0].sprite;
         }
+
+        public Color GetEmotionColor(string emotion)
+        {
+            for (int i = 0; i < emotions.Count; i++)
+            {
+                if (emotion == emotions[i].name)
+                {
+                    return emotions[i].color;
+                }
+            }
+
+            return emotions[0].color;
+
+        }
     }
 
     [System.Serializable]

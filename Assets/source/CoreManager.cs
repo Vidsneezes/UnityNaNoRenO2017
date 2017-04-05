@@ -103,13 +103,14 @@ namespace SwiperEngine
             stripMeta.skit = strip.skit;
             stripMeta.text = strip.text;
             SetProfileMeta(strip.skit,strip.emotion);
-
             dp.coreManager = this;
             dp.transform.SetParent(activePanelsHolder);
             dp.transform.localScale = new Vector3(1, 1, 1);
             dp.transform.localPosition = new Vector3(0, -300, 0);
             Vector3 placePosition = new Vector3(0, panelPadding);
             dp.MoveLocally(placePosition);
+            dp.ChangeCharacterSprite(stripMeta.sprite);
+            dp.ChangeEmotionSpriteColor(stripMeta.color);
             tweeningPanels.Add(dp);
             ShiftOtherPanelsUp();
             activePanels.Add(dp);
@@ -172,6 +173,7 @@ namespace SwiperEngine
                 if (characters[i].characterObject.name == characterName)
                 {
                     stripMeta.sprite = characters[i].characterObject.GetSprite(emotion);
+                    stripMeta.color = characters[i].characterObject.GetEmotionColor(emotion);
                 }
             }
         }
@@ -183,8 +185,10 @@ namespace SwiperEngine
         public string text;
         public string skit;
         public Sprite sprite;
+        public Color color;
     }
 
+    [System.Serializable]
     public struct CharacterProfileMeta
     {
         public CharacterObject characterObject;
