@@ -43,6 +43,8 @@ namespace SwiperEngine
 
         public string state;
 
+        public List<CharacterProfileMeta> characters;
+
         private List<DialoguePanel> activePanels;
         private List<DialoguePanel> inactivePanels;
         private StripMeta stripMeta;
@@ -167,6 +169,11 @@ namespace SwiperEngine
         public string lastRealDirection;
         public string text;
         public string skit;
+    }
+
+    public struct CharacterProfileMeta
+    {
+        public CharacterObject characterObject;
     }
 
 }

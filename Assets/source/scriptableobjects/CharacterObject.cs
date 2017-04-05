@@ -8,6 +8,19 @@ namespace SwiperEngine
     public class CharacterObject : ScriptableObject
     {
         public List<EmotionStruct> emotions;
+
+        public Sprite GetSprite(string emotion)
+        {
+            for (int i = 0; i < emotions.Count; i++)
+            {
+                if(emotion == emotions[i].name)
+                {
+                    return emotions[i].sprite;
+                }
+            }
+
+            return emotions[0].sprite;
+        }
     }
 
     [System.Serializable]
