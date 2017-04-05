@@ -61,10 +61,14 @@ namespace SwiperEngine
             switch (state)
             {
                 case "INITIAL":SpawnPanel(); break;
+                case "WORD_BY_WORD": if (Input.GetKeyDown(KeyCode.K))
+                    {
+                        state = "-";
+                    }break;
                 case "WAIT_SPAWN_TWEEN":
                     if (tweeningPanels.Count == 0)
                     {
-                        state = "WAIT_INPUT";
+                        StartCoroutine(WordByWordRoutine());
                     }
                     break;
                 case "WAIT_INPUT":
@@ -87,11 +91,14 @@ namespace SwiperEngine
             Strip strip = coreLogic.NextStrip();
             if(strip.direction != "-")
             {
+                stripMeta.lastRealDirection = strip.direction;
                 dp.AlignImage(strip.direction);
             }else
             {
                 dp.AlignImage(stripMeta.lastRealDirection);  
             }
+            stripMeta.text = strip.text;
+
             dp.coreManager = this;
             dp.transform.SetParent(activePanelsHolder);
             dp.transform.localScale = new Vector3(1, 1, 1);
@@ -104,7 +111,6 @@ namespace SwiperEngine
             state = "WAIT_SPAWN_TWEEN";
             skitName.text = strip.skit;
             stripText.text = strip.text;
-
         }
 
         public void ShiftOtherPanelsUp()
@@ -127,10 +133,40 @@ namespace SwiperEngine
         {
             tweeningPanels.Remove(dp);
         }
+
+        private IEnumerator WordByWordRoutine()
+        {
+            string text = stripMeta.text;
+            string[] words = text.Split(' ');
+            string fillThis = "";
+            int wordCounter = 0;
+            state = "WORD_BY_WORD";
+            while (wordCounter < words.Length)
+            {
+                if (state == "WORD_BY_WORD")
+                {
+
+                    fillThis += words[wordCounter];
+                    wordCounter += 1;
+                    stripText.text = fillThis;
+                    yield return new WaitForSeconds(0.1f);
+                }
+                else
+                {
+                    stripText.text = text;
+                    break;
+                }
+            }
+            yield return new WaitForSeconds(0.05f);
+            state = "WAIT_INPUT";
+        }
     }
+
+    public struct StripMeta
+    {
+        public string lastRealDirection;
+        public string text;
+    }
+
 }
 
-public struct StripMeta
-{
-    public string lastRealDirection;
-}
