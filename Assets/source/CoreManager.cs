@@ -94,6 +94,11 @@ namespace SwiperEngine
             {
                 dp.AlignImage(stripMeta.lastRealDirection);  
             }
+            if(strip.background != "-")
+            {
+                SetBackground(strip.background);
+            }
+
             stripMeta.skit = strip.skit;
             stripMeta.text = strip.text;
             SetProfileMeta(strip.skit,strip.emotion);
