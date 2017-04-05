@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 
 namespace SwiperEngine
 {
@@ -19,8 +20,6 @@ namespace SwiperEngine
 
             //TODO music player
 
-            //TODO add text parser
-
             //TODO implement Text reader letter by letter
 
             //TODO finish state reducer
@@ -33,6 +32,10 @@ namespace SwiperEngine
         public DialoguePanel rightPanelPrefab;
         public Transform inactivePanelsHolder;
         public Transform activePanelsHolder;
+
+        public TextMeshProUGUI skitName;
+        public TextMeshProUGUI stripText;
+
 
         public float panelHeight;
         public float panelPadding;
@@ -99,6 +102,9 @@ namespace SwiperEngine
             ShiftOtherPanelsUp();
             activePanels.Add(dp);
             state = "WAIT_SPAWN_TWEEN";
+            skitName.text = strip.skit;
+            stripText.text = strip.text;
+
         }
 
         public void ShiftOtherPanelsUp()
