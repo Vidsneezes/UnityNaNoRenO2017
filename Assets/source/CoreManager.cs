@@ -72,14 +72,14 @@ namespace SwiperEngine
                     }
                     break;
                 case "WAIT_INPUT":
-                    if (Input.GetKeyDown(KeyCode.K) && !coreLogic.endOfCut)
-                    {
-                        SpawnPanel();
-                    }
-
                     if (coreLogic.endOfCut)
                     {
                         state = "LAST_CUT";
+                    }
+
+                    if (Input.GetKeyDown(KeyCode.K) && !coreLogic.endOfCut)
+                    {
+                        SpawnPanel();
                     }
                     break;
             }
@@ -87,6 +87,7 @@ namespace SwiperEngine
 
         public void SpawnPanel()
         {
+            stripText.text = "";
             DialoguePanel dp = GameObject.Instantiate(dialoguePanel);
             Strip strip = coreLogic.NextStrip();
             if(strip.direction != "-")
@@ -97,8 +98,8 @@ namespace SwiperEngine
             {
                 dp.AlignImage(stripMeta.lastRealDirection);  
             }
+            stripMeta.skit = strip.skit;
             stripMeta.text = strip.text;
-
             dp.coreManager = this;
             dp.transform.SetParent(activePanelsHolder);
             dp.transform.localScale = new Vector3(1, 1, 1);
@@ -109,8 +110,6 @@ namespace SwiperEngine
             ShiftOtherPanelsUp();
             activePanels.Add(dp);
             state = "WAIT_SPAWN_TWEEN";
-            skitName.text = strip.skit;
-            stripText.text = strip.text;
         }
 
         public void ShiftOtherPanelsUp()
@@ -136,6 +135,7 @@ namespace SwiperEngine
 
         private IEnumerator WordByWordRoutine()
         {
+            skitName.text = stripMeta.skit;
             string text = stripMeta.text;
             string[] words = text.Split(' ');
             string fillThis = "";
@@ -146,7 +146,7 @@ namespace SwiperEngine
                 if (state == "WORD_BY_WORD")
                 {
 
-                    fillThis += words[wordCounter];
+                    fillThis += words[wordCounter] + " ";
                     wordCounter += 1;
                     stripText.text = fillThis;
                     yield return new WaitForSeconds(0.1f);
@@ -166,6 +166,7 @@ namespace SwiperEngine
     {
         public string lastRealDirection;
         public string text;
+        public string skit;
     }
 
 }
