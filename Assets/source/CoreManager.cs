@@ -30,21 +30,28 @@ namespace SwiperEngine
         {
             activePanels = new List<DialoguePanel>();
             inactivePanels = new List<DialoguePanel>();
-            SpawnPanel();
+            tweeningPanels = new List<DialoguePanel>();
         }
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.K))
-            {
-                SpawnPanel();
-            }
+           
 
             switch (state)
             {
-                case "INITIAL":break;
-                case "WAIT_SPAWN_TWEEN":break;
-                case "WAIT_INPUT":break;
+                case "INITIAL":SpawnPanel(); break;
+                case "WAIT_SPAWN_TWEEN":
+                    if (tweeningPanels.Count == 0)
+                    {
+                        state = "WAIT_INPUT";
+                    }
+                    break;
+                case "WAIT_INPUT":
+                    if (Input.GetKeyDown(KeyCode.K))
+                    {
+                        SpawnPanel();
+                    }
+                    break;
             }
         }
 
@@ -59,6 +66,9 @@ namespace SwiperEngine
             tweeningPanels.Add(dp);
             ShiftOtherPanelsUp();
             activePanels.Add(dp);
+
+            state = "WAIT_SPAWN_TWEEN";
+
         }
 
         public void ShiftOtherPanelsUp()
@@ -77,5 +87,9 @@ namespace SwiperEngine
             tweeningPanels.Add(dp);
         }
 
+        public void RemoveTween(DialoguePanel dp)
+        {
+            tweeningPanels.Remove(dp);
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace SwiperEngine
 
         public Image characterSprite;
         public Image emotionPanel;
+        public CoreManager coreManager;
 
         public void ChangeCharacterSprite(Sprite newSprite)
         {
@@ -25,7 +26,12 @@ namespace SwiperEngine
 
         public void MoveLocally(Vector3 newPosition, float duration = 0.3f)
         {
-            transform.DOLocalMove(newPosition, duration).SetEase(Ease.OutBack);
+            transform.DOLocalMove(newPosition, duration).SetEase(Ease.OutBack).OnComplete(OnDoneMove);
+        }
+
+        private void OnDoneMove()
+        {
+            coreManager.RemoveTween(this);
         }
     }
 }
