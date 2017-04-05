@@ -20,6 +20,10 @@ namespace SwiperEngine
         {
             Strip next = cutObject.strips[currentStrip];
             currentStrip += 1;
+            if(currentStrip >= cutObject.strips.Count)
+            {
+                endOfCut = true;
+            }
             return next;
         }
         
