@@ -102,6 +102,8 @@ namespace SwiperEngine
             }
             stripMeta.skit = strip.skit;
             stripMeta.text = strip.text;
+            SetProfileMeta(strip.skit,strip.emotion);
+
             dp.coreManager = this;
             dp.transform.SetParent(activePanelsHolder);
             dp.transform.localScale = new Vector3(1, 1, 1);
@@ -162,6 +164,17 @@ namespace SwiperEngine
             yield return new WaitForSeconds(0.05f);
             state = "WAIT_INPUT";
         }
+
+        public void SetProfileMeta(string characterName, string emotion)
+        {
+            for (int i = 0; i < characters.Count; i++)
+            {
+                if (characters[i].characterObject.name == characterName)
+                {
+                    stripMeta.sprite = characters[i].characterObject.GetSprite(emotion);
+                }
+            }
+        }
     }
 
     public struct StripMeta
@@ -169,6 +182,7 @@ namespace SwiperEngine
         public string lastRealDirection;
         public string text;
         public string skit;
+        public Sprite sprite;
     }
 
     public struct CharacterProfileMeta
