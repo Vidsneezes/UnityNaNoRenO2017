@@ -9,6 +9,7 @@ namespace SwiperEngine
     {
         public CutObject cutObject; //main entry point of game
         public int currentStrip;
+        public bool endOfCut;
 
         public CoreLogic()
         {
