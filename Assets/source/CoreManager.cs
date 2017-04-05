@@ -31,12 +31,11 @@ namespace SwiperEngine
             activePanels = new List<DialoguePanel>();
             inactivePanels = new List<DialoguePanel>();
             tweeningPanels = new List<DialoguePanel>();
+            state = "INITIAL";
         }
 
         private void Update()
         {
-           
-
             switch (state)
             {
                 case "INITIAL":SpawnPanel(); break;
@@ -47,9 +46,14 @@ namespace SwiperEngine
                     }
                     break;
                 case "WAIT_INPUT":
-                    if (Input.GetKeyDown(KeyCode.K))
+                    if (Input.GetKeyDown(KeyCode.K) && !coreLogic.endOfCut)
                     {
                         SpawnPanel();
+                    }
+
+                    if (coreLogic.endOfCut)
+                    {
+                        state = "LAST_CUT";
                     }
                     break;
             }
@@ -57,7 +61,8 @@ namespace SwiperEngine
 
         public void SpawnPanel()
         {
-            DialoguePanel dp = GameObject.Instantiate(leftPanelPrefab);
+            DialoguePanel dp =  GameObject.Instantiate(leftPanelPrefab);
+            dp.coreManager = this;
             dp.transform.SetParent(activePanelsHolder);
             dp.transform.localScale = new Vector3(1, 1, 1);
             dp.transform.localPosition = new Vector3(0, -300, 0);
@@ -66,9 +71,7 @@ namespace SwiperEngine
             tweeningPanels.Add(dp);
             ShiftOtherPanelsUp();
             activePanels.Add(dp);
-
             state = "WAIT_SPAWN_TWEEN";
-
         }
 
         public void ShiftOtherPanelsUp()
