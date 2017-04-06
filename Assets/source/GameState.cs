@@ -5,12 +5,38 @@ using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour {
 
+    private static GameState gameState;
+
+    public static GameState instance
+    {
+        get
+        {
+            if (!gameState)
+            {
+                gameState = FindObjectOfType(typeof(GameState)) as GameState;
+
+                if (!gameState)
+                {
+                    Debug.LogError("There needs to be one active EventManger script on a GameObject in your scene.");
+                }
+                else
+                {
+                }
+            }
+
+            return gameState;
+        }
+    }
+
     public string state;
     public string activeScene;
 
 	// Use this for initialization
 	void Start () {
-		
+		if(state == "BOOT")
+        {
+            ToMainMenu();
+        }
 	}
 	
 	// Update is called once per frame
@@ -18,12 +44,30 @@ public class GameState : MonoBehaviour {
       
 	}
 
-
+    public void UnloadPrevious()
+    {
+        if (activeScene != "-")
+        {
+            SceneManager.UnloadSceneAsync(activeScene);
+        }
+    }
 
     public void ToMainMenu()
     {
-        SceneManager.UnloadSceneAsync(activeScene);
-        activeScene = "MainMenu";
+        UnloadPrevious();
+        StartCoroutine(LoadScenAsyncRoutine("MainMenu", "MAIN_MENU"));
+    }
+
+    public void ToCoreScene()
+    {
+        UnloadPrevious();
+        StartCoroutine(LoadScenAsyncRoutine("CoreScene", "CORE"));
+    }
+
+    public void ToCredits()
+    {
+        UnloadPrevious();
+        StartCoroutine(LoadScenAsyncRoutine("Credits", "CREDITS"));
     }
 
     IEnumerator LoadScenAsyncRoutine(string sceneName, string futureState)
@@ -35,6 +79,7 @@ public class GameState : MonoBehaviour {
         }
         //loadCamera.gameObject.SetActive(false);
         state = futureState;
+        activeScene = sceneName;
 
     }
 }
