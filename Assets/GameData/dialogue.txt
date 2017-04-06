@@ -1,2 +1,146 @@
-﻿Me[s]I want some coffee[s]#neutral[s]$left[s]/nightsky[s]!TheStart
+Me[s]I want some coffee[s]#neutral[s]$left[s]/nightsky[s]!TheStart
 Me[s]ugghh, I don't want to get up though[s]#angry
+Me[s]uggghhh[s]#tire
+Me[s]crap, I guess I have to get up[s]#angry
+Me[s]I wish coffee would come to me magically
+Me[s]if only I didn't have to binge watch this show[s]#tire
+Me[s]but i have to, and if I'm going to survive...[s]#happy
+Me[s]... I'm a high dose of caffeine[s]#happier
+Me[s]It's going to be glorious
+Me[s]Oh No! I don't have any coffee beans left![s]#tire
+Me[s]Past me what have you done!!!![s]#angry
+Me[s]No coffee means no binge, which means oh god no[s]#tire
+Me[s]I won't let it get that far[s]#angry
+Me[s]A simple store run will solve this[s]#angry
+Me[s]Yes, as long as i don't interact with any one. I can do this[s]#neutral
+Me[s]But it is a store, so theres always a risk i might fall into...[s]#angry
+Me[s]SOCIAL INTERACTION[s]#tire
+Me[s]Do i risk going out of my comfort zone just for some coffee[s]neutral
+Me[s]It's the only choice i have[s]#neutral
+Me[s]No more debate! the faster i get this done the better[s]#happy
+Me[s]Now i could go to the usual store[s]#neutral[s]/InCar
+Me[s]but the chances of falling into interaction hell are high[s]#tire
+Me[s]I'm feeling a little drowsy from the lack of caffeine[s]#tire
+Me[s]Heading to the store first is not a good idead
+Me[s]I'm going to go refill my caffiene reservers at a coffe shop first[s]#angry
+Me[s]I'll get my fix, then i'll head to the store, it's perfect[s]#neutral
+Me[s]I'll get as much coffee as they can give me[s]happier
+Alia[s]Hi! How are you today?[s]#happy[s]$right[s]/atCounter[s]!FaceMeDown
+Me[s]hello... pretty, pretty good and you[s]#happy[s]$left
+Alia[s]What can i get for you today[s]#happy[s]$right
+Me[s]um.... huh[s]$left[s]#wacky
+Me[s]a coffee to drink.... you know[s]$left[s]#wacky
+Alia[s]ok a cold coffee it is[s]$right[s]#happy
+Me[s]no i meant a warm one, please[s]#worry[s]$left
+Alia[s]oh, ok wtf, a warm coffee and what size would you like?[s]#worry[s]$right
+Me[s]a medium will do it[s]$left[s]#neutral
+Alia[s]we got large, tall and big[s]$right[s]#tire
+Me[s]aren't those all the same thing[s]$left[s]wacky
+Alia[s]well i thought that at first too, right[s]#tire[s]$right
+Alia[s]but then I started working here and they're totally different
+Alia[s]anyways I'll put you down for a big[s]#happy
+Me[s]be that the largest coffee you have?[s]#worry[s]$left
+Alia[s]no large is the largest one[s]#tire[s]$right
+Me[s]ah then please the one below the largest one for me[s]#wacky[s]$left
+Alia[s]soooooooooo[s]#worry[s]$right
+Alia[s]a big then?
+Me[s]eck, um yes a big will be fine[s]#uncomfortable[s]$left
+Alia[s]that'll be 14 Qs[s]#tire[s]$right
+Me[s]there you go[s]#neutral[s]$left
+Alia[s]would you like to try one of our special cookies for 40 Qs[s]#tire[s]$right
+Me[s]no[s]#wacky[s]$left
+Alia[s]Oh wait! you said you wanted a medium, sorry it's actually 24 Qs[s]#wacky[s]$right
+Me[s]Oh!, honest mistake[s]#uncomfortable[s]$left
+Alia[s]did you say something, you shouldn't mumble[s]#mad[s]$right
+Me[s]no, here you go[s]#wacky[s]$left
+Me[s](that was so tiring)[s]#tire[s]$center
+Me[s](why are the sizes so weird here)[s]#tire[s]$center
+Me[s](I know i should have stayed home)[s]#angry[s]$center
+Me[s](good thing its almost over)[s]#happy[s]$center
+Jokel[s]here you go man[s]#happy[s]$right
+Me[s]Thank you[s]#happy[s]$left
+Jokel[s]Make sure you remember the sizes next time[s]#happy[s]$right
+Me[s]eh you heard that, sorry[s]$left[s]#worry
+Jokel[s]Have a good one[s]#happy[s]$right
+Me[s]you too[s]#wacky[s]$left
+Me[s]('you too'? but he's working)[s]#sad[s]$center
+Me[s]hopefully he understood what i meant
+Me[s](I'm going to sit down to drink this)
+Me[s](that was so draining)[s]#tire[s]/chair
+May[s]Hello[s]#happy[s]/chari2[s]$left
+Me[s]oh hi..[s]#happy[s]$right
+May[s]here's the large coffee you ordered[s]#happy[s]$left
+Me[s]I... I don't think that's mine[s]#wacky[s]$right
+May[s]excuse me?[s]#neutral[s]$left
+Me[s]I have my coffee right... here[s]#worry[s]$right
+May[s]so you don't want this?[s]#worry[s]$left
+Me[s]No i have mine[s]#worry[s]$right
+May[s]ah ok[s]#worry[s]#left
+Me[s](what the heck was that about)[s]#uncomfortable[s]$center[s]/chair
+Me[s](she looked really angry)[s]#uncomfortable[s]$center
+Me[s](that was so draining)[s]#tire[s]$center
+Alia[s]hey jerk, here's your large coffee[s]#mad[s]$right
+Me[s]waaahh[s]#wacky[s]$left
+Alia[s]the fuck is wrong with you?[s]#mad[s]$right[s]/chari2[s]!DeathAwaits
+Alia[s]saying them horrible things to May
+Alia[s]the hello is wrong with you?[s]#madder
+Me[s]wahhh....whaaaa[s]#sad[s]$left
+Alia[s]you enjoy going around treating people like shit?[s]#worry[s]$right
+Me[s]IIIII....ididntsay[s]$left[s]#sad
+Me[s]refusing coffee is my only crime!
+Alia[s]ppfff[s]#maddest[s]$right
+Alia[s]when May brough you large coffee you treated her like shit[s]#worry
+Me[s]I didn't treat her like shit though[s]#sad[s]$left
+Alia[s]pppppfffffffffff[s]#maddest[s]$right
+Alia[s]yes you did, I heard it[s]#worry[s]$right
+Katy[s]what's the porblem here?[s]#neutral[s]$center
+Me[s](she looks like a manager, child sized manager)[s]#neutral[s]$left
+Me[s](she'll make this nightmare end)[s]#happy[s]$left
+Alia[s]This piece of shit order a large, then when May brought it, he didn't want it[s]#mad[s]$right
+Alia[s]Then he said some petty shit to May, now she's crying in the back[s]#worry
+Me[s]I didn't treat her like shit, she's lying[s]#tire[s]$left
+Katy[s]The hell is wrong with you!?[s]#madder[s]$center
+Me[s](yes plase explain to her i did nothing wrong)[s]#happy[s]$left
+Katy[s]so what? our coffee isn't good enough for ya?[s]#mad[s]$right
+Me[s](huuuhh)[s]#exhausted[s]$left
+Katy[s]That... and you treat my employees like shit?[s]#neutral[s]$right
+Katy[s]just because you hate our coffee?[s]#madder
+Me[s](please stop)[s]#sad[s]$left
+Katy[s]jerks like you make living in this world hard[s]angry[s]$right
+Alia[s]punk ass[s]#maddest[s]$center
+Me[s]she is a lying![s]#uncomfortable[s]$left
+Me[s]I just wanted a big coffee and privacy[s]#wacky[s]$left
+Alia[s]yea i bet you did, and treating May like shit was just icing on the cake for you[s]#worry[s]$right
+Policeman[s]what's da matta here?[s]#neutral[s]#center
+Alia[s]this nutjob order a coffee and is refusing to take it[s]#happy[s]$right
+Alia[s]he went berserk, when we brought him the coffee[s]#wacky
+Policeman[s]rightous[s]#tire[s]$right
+Me[s]I just wanted a coffee sir, no need to get involved[s]#worry[s]$left
+Me[s]and they are a lying[s]#sad
+Alia[s]yea and we brought it yo you[s]#worry[s]$right
+Me[s]She brought two[s]#neutral[s]$left
+Me[s](hos it this my fault)[s]#tire
+Alia[s]you order both, bad guy[s]#worry[s]$right
+Policeman[s]look hombre, if you won't take the coffee and this serious[s]#mad[s]$right
+Policeman[s]then you leave me no choice but to arrest you[s]#angry
+Me[s](huh)[s]#exhausted[s]$left
+Katy[s]Officer, officer please[s]#neutral[s]$center
+Me[s](she's going to help me?)[s]#happier[s]$left
+Me[s]this is nuts right[s]#neutral
+Katy[s]Don't fucking interrupt me, you ass![s]#angry[s]$center
+Me[s]huh[s]#Exhausted[s]$left
+Katy[s]Ahem[s]#tire[s]$center
+Katy[s]OFFICER, THIS MAN SHOULD NOT BE HERE TAKE HIM AWAY![s]#maddest[s]$center
+Policeman[s]right away ma'am[s]#tire[s]$right
+Policeman[s]come here![s]#mad
+Policeman[s]don't make me have to go get ya
+Me[s]wait! I'll take the damn coffee[s]#sad[s]$left
+Me[s]please just leave me alone[s]#uncomfortable
+Policeman[s]too late bad guy[s]#angry[s]$right
+Me[s]*Shudders*[s]#tire[s]$center[s]/nightsky[s]!TheStart
+Me[s]*shakes*
+Me[s]*shakes shakes shakes*
+Me[s]something like that might happen
+Me[s]I think I rather not go out[s]#happy
+Me[s]I'll just stay home and binge watch my show caffieneless[s]#happier
+Me[s]-sigh-[s]#sad
