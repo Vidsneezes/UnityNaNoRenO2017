@@ -77,7 +77,7 @@ namespace SwiperEngine
             switch (state)
             {
                 case "INITIAL":SpawnPanel(); break;
-                case "WORD_BY_WORD": if (Input.GetKeyDown(KeyCode.K))
+                case "WORD_BY_WORD": if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
                     {
                         state = "-";
                     }break;
@@ -93,7 +93,7 @@ namespace SwiperEngine
                         state = "LAST_CUT";
                     }
 
-                    if (Input.GetKeyDown(KeyCode.K) && !coreLogic.endOfCut)
+                    if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && !coreLogic.endOfCut)
                     {
                         SpawnPanel();
                     }
