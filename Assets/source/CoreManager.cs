@@ -9,17 +9,9 @@ namespace SwiperEngine
 {
     public class CoreManager : MonoBehaviour
     {
-            //TODO finish state reducer
-
             //TODO try to add voice acting--- later
 
-            //TODO finish dialogue conversion
-
-            //TODO add connect to scene changes
-
             //TODO add a options window for volume settings
-
-            //TODO -g add scene management and game manager
 
         public CoreLogic coreLogic;
 
@@ -104,7 +96,17 @@ namespace SwiperEngine
         public void SpawnPanel()
         {
             stripText.text = "";
-            DialoguePanel dp = GameObject.Instantiate(dialoguePanel);
+            DialoguePanel dp;
+            if (inactivePanels.Count == 0)
+            {
+                 dp = GameObject.Instantiate(dialoguePanel);
+            }
+            else
+            {
+                dp = inactivePanels[0];
+                inactivePanels.RemoveAt(0);
+                dp.gameObject.SetActive(true);
+            }
             Strip strip = coreLogic.NextStrip();
             if(strip.direction != "-")
             {
@@ -154,6 +156,22 @@ namespace SwiperEngine
             {
                 ShiftPanel(activePanels[i]);
             }
+
+            for (int i = 0; i < activePanels.Count; i++)
+            {
+                if(activePanels[i].gameObject.activeInHierarchy == false)
+                {
+                    inactivePanels.Add(activePanels[i]);
+                }
+            }
+
+            for (int i = 0; i < inactivePanels.Count; i++)
+            {
+                if (activePanels.Contains(inactivePanels[i]))
+                {
+                    activePanels.Remove(inactivePanels[i]);
+                }
+            }
         }
      
         private void ShiftPanel(DialoguePanel dp)
@@ -161,7 +179,14 @@ namespace SwiperEngine
             Vector3 newPos = dp.transform.localPosition;
             newPos.y += panelHeight;
             dp.MoveLocally(newPos);
-            tweeningPanels.Add(dp);
+            if (dp.transform.position.y > 400)
+            {
+                dp.gameObject.SetActive(false);
+            }
+            else
+            {
+                tweeningPanels.Add(dp);
+            }
         }
 
         public void RemoveTween(DialoguePanel dp)
