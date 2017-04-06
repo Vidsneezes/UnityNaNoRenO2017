@@ -1,16 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class BootLoader : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+namespace SwiperEngine
+{
+    public class BootLoader : MonoBehaviour
+    {
+        public GameState gameStatePrefab;
+        private void Awake()
+        {
+            GameObject.Instantiate(gameStatePrefab);
+            GameObject.Destroy(gameObject);
+        }
+    }
 }

@@ -37,7 +37,21 @@ namespace SwiperEngine
         public float panelHeight;
         public float panelPadding;
         public Image backgroundImage;
-        public AudioManager audioManager;
+        public AudioManager audioManager
+        {
+            get
+            {
+                if(GameState.instance != null)
+                {
+                    return GameState.instance.audioManager;
+                }
+                else
+                {
+                    Debug.LogWarning("Put a Game State on scene to access Audio Manager");
+                }
+                return null;
+            }
+        }
 
         public string state;
 
