@@ -112,7 +112,14 @@ namespace SwiperEngine
 
             stripMeta.skit = strip.skit;
             stripMeta.text = strip.text;
-            SetProfileMeta(strip.skit,strip.emotion);
+            if (strip.emotion != "-")
+            {
+                SetProfileMeta(strip.skit, strip.emotion);
+            }
+            else
+            {
+                SetProfileMeta(strip.skit, stripMeta.emotion);
+            }
             dp.coreManager = this;
             dp.transform.SetParent(activePanelsHolder);
             dp.transform.localScale = new Vector3(1, 1, 1);
@@ -184,6 +191,7 @@ namespace SwiperEngine
                 {
                     stripMeta.sprite = characters[i].characterObject.GetSprite(emotion);
                     stripMeta.color = characters[i].characterObject.GetEmotionColor(emotion);
+                    stripMeta.emotion = emotion;
                 }
             }
         }
@@ -218,6 +226,7 @@ namespace SwiperEngine
         public string lastRealDirection;
         public string text;
         public string skit;
+        public string emotion;
         public Sprite sprite;
         public Color color;
         public Sprite background;
