@@ -20,5 +20,22 @@ namespace SwiperEngine
             musicPlayer.clip = clip;
             musicPlayer.Play();
         }
+
+        public void FadeMusicOut()
+        {
+            StartCoroutine(FadeMusicOutRoutine());
+        }
+
+        private IEnumerator FadeMusicOutRoutine()
+        {
+            float timer = 1;
+            float originalVolume = musicPlayer.volume;
+            while (timer > 0)
+            {
+                timer -= Time.deltaTime;
+                musicPlayer.volume = Mathf.Lerp(originalVolume, 0, timer);
+                yield return new WaitForEndOfFrame();
+            }
+        }
     }
 }
