@@ -55,6 +55,7 @@ namespace SwiperEngine
         private List<DialoguePanel> inactivePanels;
         private StripMeta stripMeta;
         private List<DialoguePanel> tweeningPanels;
+        private float timer;
 
         private void Start()
         {
@@ -83,6 +84,7 @@ namespace SwiperEngine
                     if (coreLogic.endOfCut)
                     {
                         state = "LAST_CUT";
+                        timer = Time.time;
                     }
 
                     if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && !coreLogic.endOfCut)
@@ -90,6 +92,12 @@ namespace SwiperEngine
                         SpawnPanel();
                     }
                     break;
+                case "LAST_CUT":
+                    if(Time.time - timer > 1.6f)
+                    {
+                        GameState.instance.ToCredits();
+
+                    }break;
             }
         }
 
