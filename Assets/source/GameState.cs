@@ -33,6 +33,7 @@ namespace SwiperEngine
 
         public string state;
         public string activeScene;
+        public Camera loadCamera;
 
         public AudioManager audioManager;
 
@@ -57,6 +58,7 @@ namespace SwiperEngine
             {
                 SceneManager.UnloadSceneAsync(activeScene);
             }
+            loadCamera.gameObject.SetActive(true);
         }
 
         public void ToMainMenu()
@@ -87,6 +89,7 @@ namespace SwiperEngine
             //loadCamera.gameObject.SetActive(false);
             state = futureState;
             activeScene = sceneName;
+            loadCamera.gameObject.SetActive(false);
 
         }
     }
