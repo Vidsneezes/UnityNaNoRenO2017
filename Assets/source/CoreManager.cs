@@ -85,6 +85,7 @@ namespace SwiperEngine
                     {
                         state = "LAST_CUT";
                         timer = Time.time;
+                        audioManager.FadeMusicOut();
                     }
 
                     if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && !coreLogic.endOfCut)
