@@ -11,8 +11,6 @@ namespace SwiperEngine
     {
             //TODO try to add voice acting--- later
 
-            //TODO add a options window for volume settings
-
         public CoreLogic coreLogic;
 
         public DialoguePanel dialoguePanel;
@@ -195,7 +193,6 @@ namespace SwiperEngine
             Vector3 newPos = dp.transform.localPosition;
             newPos.y += panelHeight;
             dp.MoveLocally(newPos);
-            Debug.Log(dp.transform.position.y);
             if (dp.transform.position.y > 21)
             {
                 dp.gameObject.SetActive(false);
