@@ -37,5 +37,10 @@ namespace SwiperEngine
                 yield return new WaitForEndOfFrame();
             }
         }
+
+        public void MuteAudio()
+        {
+            musicPlayer.mute = !musicPlayer.mute;
+        }
     }
 }

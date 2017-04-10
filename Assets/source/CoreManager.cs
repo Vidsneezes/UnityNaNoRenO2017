@@ -67,6 +67,11 @@ namespace SwiperEngine
 
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                audioManager.MuteAudio();
+            }
+
             switch (state)
             {
                 case "INITIAL":SpawnPanel(); break;
