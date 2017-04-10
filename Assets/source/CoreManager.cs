@@ -116,6 +116,8 @@ namespace SwiperEngine
                 inactivePanels.RemoveAt(0);
                 dp.gameObject.SetActive(true);
             }
+
+
             Strip strip = coreLogic.NextStrip();
             if(strip.direction != "-")
             {
@@ -188,7 +190,8 @@ namespace SwiperEngine
             Vector3 newPos = dp.transform.localPosition;
             newPos.y += panelHeight;
             dp.MoveLocally(newPos);
-            if (dp.transform.position.y > 400)
+            Debug.Log(dp.transform.position.y);
+            if (dp.transform.position.y > 21)
             {
                 dp.gameObject.SetActive(false);
             }
